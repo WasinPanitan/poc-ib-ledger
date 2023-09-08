@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "22a4b915-218c-4acb-81e5-46806eb36b67",
+		"name": "POC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "manual buy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"assetId\": \"ETH\",\n    \"amount\": 2,\n    \"price\": 200, // total price for this tx\n    \"costPrice\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/manual-buy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"manual-buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manual sell",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"assetId\": \"ETH\",\n    \"amount\": 2,\n    \"price\": 200, // total price for this tx\n    \"costPrice\": 95 // cost price to select from bucket\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/manual-sell",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"manual-sell"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "swap crypto -> crypto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fromApp\": \"HASHPAYS\",\n    \"toApp\": \"HASHPAYS\",\n    \"fromAssetId\": \"BTC\",\n    \"toAssetId\": \"ETH\",\n    \"fromAmount\": 1,\n    \"toAmount\": 2\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/swap-cc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"swap-cc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "swap crypto -> stable",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fromApp\": \"HASHPAYS\",\n    \"toApp\": \"HASHPAYS\",\n    \"fromAssetId\": \"BTC\",\n    \"toAssetId\": \"USDT\",\n    \"fromAmount\": 1,\n    \"toAmount\": 190\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/swap-cs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"swap-cs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "swap stable -> crypto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fromApp\": \"HASHPAYS\",\n    \"toApp\": \"HASHPAYS\",\n    \"fromAssetId\": \"USDT\",\n    \"toAssetId\": \"ETH\",\n    \"fromAmount\": 100,\n    \"toAmount\": 1\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/swap-sc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"swap-sc"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
